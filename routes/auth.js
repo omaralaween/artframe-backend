@@ -4,7 +4,7 @@ import pgclient from "../db.js";
 
 const router = express.Router();
 
-// 🔐 Signup Route
+// Signup Route
 router.post("/signup", async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-// 🔐 Login Route
+// Login Route
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;

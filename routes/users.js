@@ -4,7 +4,7 @@ import { requireArtist, requireBuyer } from "../middleware/roleAuth.js"; // ✅ 
 
 const router = express.Router();
 
-// 🟡 Get artworks uploaded by user (Restricted to artists)
+// Get artworks uploaded by user (Restricted to artists)
 router.get("/:id/artworks", requireArtist, async (req, res) => {
   const userId = req.params.id;
   try {
@@ -19,7 +19,7 @@ router.get("/:id/artworks", requireArtist, async (req, res) => {
   }
 });
 
-// 🔵 Get artworks purchased by user (Restricted to buyers)
+// Get artworks purchased by user (Restricted to buyers)
 router.get("/:id/purchases", requireBuyer, async (req, res) => {
   const userId = req.params.id;
   try {
@@ -38,7 +38,7 @@ router.get("/:id/purchases", requireBuyer, async (req, res) => {
   }
 });
 
-// 🟢 Get user by ID
+// Get user by ID
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -56,7 +56,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// 🟣 Update user info
+// Update user info
 router.put("/:id", async (req, res) => {
   const { username, email, password, bio, avatar_url, banner_url } = req.body;
   const userId = req.params.id;

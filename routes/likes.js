@@ -3,7 +3,7 @@ import pgclient from "../db.js";
 
 const router = express.Router();
 
-// 🔁 Count likes received by all artworks of an artist
+// Count likes received by all artworks of an artist
 router.get("/artist/:artistId", async (req, res) => {
   const { artistId } = req.params;
   try {
@@ -19,7 +19,7 @@ router.get("/artist/:artistId", async (req, res) => {
   }
 });
 
-// ✅ Check if user liked a specific artwork
+// Check if user liked a specific artwork
 router.get("/:artworkId/user/:userId", async (req, res) => {
   const { artworkId, userId } = req.params;
   try {
@@ -34,7 +34,7 @@ router.get("/:artworkId/user/:userId", async (req, res) => {
   }
 });
 
-// ✅ Get total likes for a given artwork
+// Get total likes for a given artwork
 router.get("/:artworkId", async (req, res) => {
   const { artworkId } = req.params;
   try {
@@ -49,7 +49,7 @@ router.get("/:artworkId", async (req, res) => {
   }
 });
 
-// ❤️ Like an artwork
+// Like an artwork
 router.post("/", async (req, res) => {
   const { artwork_id, user_id } = req.body;
   try {
@@ -64,7 +64,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 💔 Unlike an artwork
+// Unlike an artwork
 router.delete("/", async (req, res) => {
   const { artwork_id, user_id } = req.body;
   try {

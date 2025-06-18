@@ -3,7 +3,7 @@ import pgclient from "../db.js";
 
 const router = express.Router();
 
-// 🔄 Follow Artist (Only Buyers)
+// Follow Artist (Only Buyers)
 router.post("/", async (req, res) => {
   const { follower_id, followed_artist_id } = req.body;
 
@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🚫 Unfollow Artist (Only Buyers)
+// Unfollow Artist (Only Buyers)
 router.delete("/", async (req, res) => {
   const { follower_id, followed_artist_id } = req.body;
 
@@ -35,7 +35,7 @@ router.delete("/", async (req, res) => {
   }
 });
 
-// ✅ Check Follow Status
+// Check Follow Status
 router.get("/check", async (req, res) => {
   const { follower_id, followed_artist_id } = req.query;
 
@@ -51,7 +51,7 @@ router.get("/check", async (req, res) => {
   }
 });
 
-// 👥 Get followers count for an artist
+// Get followers count for an artist
 router.get("/followers/:userId", async (req, res) => {
   const { userId } = req.params;
   try {
@@ -66,7 +66,7 @@ router.get("/followers/:userId", async (req, res) => {
   }
 });
 
-// 🔁 Get number of artists followed by a buyer
+// Get number of artists followed by a buyer
 router.get("/followed/:userId", async (req, res) => {
   const { userId } = req.params;
   try {

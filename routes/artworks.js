@@ -4,7 +4,7 @@ import { requireArtist } from "../middleware/roleAuth.js";
 
 const router = express.Router();
 
-// ✅ Get all artworks with artist info
+// Get all artworks with artist info
 router.get("/", async (req, res) => {
   try {
     const query = `
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ✅ Get artworks by followed artists
+// Get artworks by followed artists
 router.get("/followed/:userId", async (req, res) => {
   const { userId } = req.params;
 
@@ -42,7 +42,7 @@ router.get("/followed/:userId", async (req, res) => {
   }
 });
 
-// ✅ Post a new artwork (only by artists)
+// Post a new artwork (only by artists)
 router.post("/", requireArtist, async (req, res) => {
   try {
     const { artist_id, title, description, image_url, price } = req.body;
@@ -68,7 +68,7 @@ router.post("/", requireArtist, async (req, res) => {
   }
 });
 
-// ✅ Get single artwork by ID
+// Get single artwork by ID
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
 

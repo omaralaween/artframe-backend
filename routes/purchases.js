@@ -4,7 +4,7 @@ import { requireBuyer } from "../middleware/roleAuth.js"; // ✅ import named mi
 
 const router = express.Router();
 
-// 🛒 Record Purchase (Only Buyers Allowed)
+// Record Purchase (Only Buyers Allowed)
 router.post("/", requireBuyer, async (req, res) => {
   const { user_id, artwork_id } = req.body;
 
@@ -20,7 +20,7 @@ router.post("/", requireBuyer, async (req, res) => {
   }
 });
 
-// 📈 Get Purchase Count for an Artist (SALES COUNT)
+// Get Purchase Count for an Artist (SALES COUNT)
 router.get("/artist/:artistId", async (req, res) => {
   const { artistId } = req.params;
 
@@ -37,7 +37,7 @@ router.get("/artist/:artistId", async (req, res) => {
   }
 });
 
-// 🧾 Get All Purchases for a User (Buyer)
+// Get All Purchases for a User (Buyer)
 router.get("/:userId", async (req, res) => {
   const { userId } = req.params;
 

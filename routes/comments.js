@@ -4,7 +4,7 @@ import pgclient from "../db.js";
 
 const router = express.Router();
 
-// ✅ GET all comments for a specific artwork (with user info)
+// GET all comments for a specific artwork (with user info)
 router.get("/:artworkId", async (req, res) => {
   const { artworkId } = req.params;
 
@@ -24,7 +24,7 @@ router.get("/:artworkId", async (req, res) => {
   }
 });
 
-// ✅ GET comment count for an artwork
+// GET comment count for an artwork
 router.get("/:artworkId/count", async (req, res) => {
   const { artworkId } = req.params;
 
@@ -38,7 +38,7 @@ router.get("/:artworkId/count", async (req, res) => {
   }
 });
 
-// ✅ POST a new comment (return enriched comment with username/avatar)
+// POST a new comment (return enriched comment with username/avatar)
 router.post("/", async (req, res) => {
   const { artwork_id, user_id, text } = req.body;
 
